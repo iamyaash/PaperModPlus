@@ -18,12 +18,12 @@
 }
 
 .profile img {
-    border-radius: 50%;
+    border-radius: 10%;
 }
 
 .buttons {
     flex-wrap: wrap;
-    max-width: 400px;
+    max-width: 600px;
 }
 
 .button {
@@ -38,6 +38,9 @@
     padding: 0 8px;
 }
 
+.button:hover {
+    transform: scale(1.04);
+}
 .button:active {
     transform: scale(0.96);
 }
