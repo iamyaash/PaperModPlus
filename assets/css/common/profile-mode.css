@@ -44,3 +44,46 @@
 .button:active {
     transform: scale(0.96);
 }
+
+
+.tooltip {
+    position: relative;
+    display: inline-block;
+    cursor: pointer;
+}
+
+.tooltip .tooltiptext {
+    visibility: hidden;
+    width: auto;
+    background-color: var(--tertiary);
+    color: var (--primary);
+    text-align: center;
+    padding: 5px 8px;
+    border-radius: 6px;
+    position: absolute;
+    z-index: 10;
+    bottom: auto;
+    top: 125%; /* Position below the button */
+    left: 50%;
+    transform: translateX(-50%);
+    opacity: 0;
+    transition: opacity 0.3s;
+    white-space: nowrap;
+}
+
+.tooltip .tooltiptext::after {
+    content: "";
+    position: absolute;
+    top: auto; /* Arrow at the bottom of tooltip */
+    bottom: 100%;
+    left: 50%;
+    transform: translateX(-50%);
+    border-width: 5px;
+    border-style: solid;
+    border-color: var(--tertiary) transparent transparent transparent;
+}
+
+.tooltip:hover .tooltiptext {
+    visibility: visible;
+    opacity: 1;
+}
