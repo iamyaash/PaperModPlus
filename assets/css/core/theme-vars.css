@@ -15,6 +15,8 @@
     --code-block-bg: #303030;
     --code-bg: rgb(245, 245, 245);
     --border: rgb(238, 238, 238);
+    --tooltip: white;
+    --tooltip-text: black;
 }
 
 .dark {
@@ -27,6 +29,9 @@
     --code-block-bg: #333333;
     --code-bg: rgb(55, 56, 62);
     --border: #353535;
+    --tooltip: #7e9ca0;
+    --tooltip-text:#2a2a2a;
+
 }
 
 .list {

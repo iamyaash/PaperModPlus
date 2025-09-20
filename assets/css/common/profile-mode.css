@@ -45,45 +45,42 @@
     transform: scale(0.96);
 }
 
-
-.tooltip {
-    position: relative;
-    display: inline-block;
-    cursor: pointer;
-}
-
 .tooltip .tooltiptext {
     visibility: hidden;
     width: auto;
-    background-color: var(--tertiary);
-    color: var (--primary);
-    text-align: center;
-    padding: 5px 8px;
+    background-color: var(--tooltip);
+    color: var(--tooltip-text);
+    text-align: left;
+    padding: 8px 12px;
     border-radius: 6px;
     position: absolute;
-    z-index: 10;
-    bottom: auto;
-    top: 125%; /* Position below the button */
+    bottom: 125%;
     left: 50%;
     transform: translateX(-50%);
     opacity: 0;
-    transition: opacity 0.3s;
+    transition: opacity 0.4s;
     white-space: nowrap;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.08);
 }
 
 .tooltip .tooltiptext::after {
     content: "";
     position: absolute;
-    top: auto; /* Arrow at the bottom of tooltip */
-    bottom: 100%;
+    top: 100%;
     left: 50%;
     transform: translateX(-50%);
-    border-width: 5px;
+    border-width: 6px;
     border-style: solid;
-    border-color: var(--tertiary) transparent transparent transparent;
+    border-color: var(--tooltip) transparent transparent transparent;
 }
 
-.tooltip:hover .tooltiptext {
+/* Show tooltip on hover */
+.tooltip:hover .tooltiptext,
+.tooltip:focus .tooltiptext {
     visibility: visible;
     opacity: 1;
+    pointer-events: auto;
 }
+
+/* Responsive adjustment: On small screens, move tooltip above instead */
+@media (max-width: 800px) {.tooltip .tooltiptext { display: none ;}}
