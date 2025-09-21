@@ -37,7 +37,7 @@
         {{- with .buttons }}
         <div class="buttons">
             {{- range . }}
-            <a class="button tooltip" href="{{ trim .url " " }}" rel="noopener" title="{{ .name }}">
+            <a class="button tooltip" href="{{ trim .url " " }}" rel="noopener" {{ if .tooltip }} aria-label="{{ .tooltip }}"{{ else }} aria-label="{{ .name }}"{{ end }}>
                 <span class="button-inner">
                     {{ .name }}
                     {{- if .tooltip }}
